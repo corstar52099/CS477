@@ -8,7 +8,7 @@ std::pair<int,int> getNegatives(int[], int);
 //main function
 int main(){
     int arr[12] = {4, 3, -2, 0, 2, 9, -1, 10, 0, 5, 23, -4};
-    //output the array first 
+    //output the array first before sorting
     std::cout << "Array before sorting: " << "[";
     int i = 0;
     while(i < 12){
