@@ -8,10 +8,24 @@ std::pair<int,int> getNegatives(int[], int);
 //main function
 int main(){
     int arr[12] = {4, 3, -2, 0, 2, 9, -1, 10, 0, 5, 23, -4};
+    //output the array first 
+    std::cout << "Array before sorting: " << "[";
+    int i = 0;
+    while(i < 12){
+        std::cout << arr[i] << " ";
+        i++;
+    }
+    std::cout << "]" << std::endl;
 
     //place negatives preceding the positives
     precede(arr, 12);
-
+    i = 0;
+    std::cout << "Array after sorting: " << "[";
+    while(i < 12){
+        std::cout << arr[i] << " ";
+        i++;
+    }
+    std::cout << "]" << std::endl;
 }
 
 void precede(int arr[], int n){
