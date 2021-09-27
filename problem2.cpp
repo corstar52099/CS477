@@ -21,8 +21,27 @@ void precede(int arr[], int n){
     int* left = new int[vals.first];
     int* right = new int[vals.second];
 
+    int j = 0;
+    int k = 0;
+    
+    //filling the positive and negative arrays
     for(int i=0; i < n; i++){
-        if ()
+        if (arr[i] < 0){
+            left[j] = arr[i];
+            j++;
+        }
+        else{
+            right[k] = arr[i];
+            k++;
+        }
+    }
+
+    //merge the left and right into the arr
+    for(int i=0; i < vals.first; i++){
+        arr[i] = left[i];
+    }
+    for(int i=0; i < vals.second; i++){
+        arr[i + vals.first] = right[i]; 
     }
 }
 
