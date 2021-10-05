@@ -20,9 +20,12 @@ int main(){
     }
 
     //run max_heap on arr B
-    std::cout << "Result for running max_heap on A: " << std::endl;
+    std::cout << "Result for running max_heap on B: " << std::endl;
     if(max_heap(B, 1, 2, 9)){
         std::cout << "YES, heap" << std::endl;
+    }
+    else{
+        std::cout << "Not a heap" << std::endl;
     }
 
     return 0;
@@ -36,10 +39,26 @@ bool max_heap(int arr[], int parent, int child, int n){
     //an assumption is made for this algorithm where the child
     //is always the left child of a node or 2*parent_index
 
-    if(child >= n )
-
     //base case if you've reached the end 
-    if(parent == n - 1){
+    if(child >= n ){
+        if(arr[child-1] > arr[parent-1]){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    else if(child + 1 >= n){
+        if((arr[child - 1] > arr[parent]) || (arr[child] > arr[parent])){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    //possibly useless case
+    if(parent >= n){
         return true;
     }
 
