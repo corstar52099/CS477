@@ -1,5 +1,10 @@
 #include <iostream>
 
+//prototypes
+bool max_heap(int [], int, int, int);
+//end prototypes
+
+
 int main(){
     //initialize arrays 
     int A[10] = {16, 14, 10, 8, 7, 9, 3, 2, 4, 1};
