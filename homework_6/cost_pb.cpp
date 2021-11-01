@@ -31,19 +31,24 @@ int main(){
 
 //integer j refers to the index of recursion
 int optimal_value(int weight[], int opt_vals[], int j){
+
     //base case
     if(j == 0){
         opt_vals[j] = r*weight[j];
         return opt_vals[j];
     }
+    //case where there are <= 4 elements left
     if(j < 4){
+        //if there are 4 elements left company B can still be chosen
         if(j == 3){
             opt_vals[j] = min((optimal_value(weight, opt_vals, j-1) + r*weight[j]), (4*c));
             return opt_vals[j];
         }
+        //there are <4 elements so company B cannot be chosen
         opt_vals[j] = optimal_value(weight, opt_vals, j-1) + r * weight[j];
         return opt_vals[j];
     }
+    //recursive case with no restricts, acts normally to recursive formula
     opt_vals[j] = min((optimal_value(weight, opt_vals, j-1) + r*weight[j]), 
                (optimal_value(weight, opt_vals, j-4) + 4*c));
     return opt_vals[j];    
