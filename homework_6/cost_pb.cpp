@@ -8,6 +8,7 @@
 
 //prototypes
 int min(int x, int y){return x<y?x:y;}
+int optimal_value(int weight[], int opt_vals[], int j, int n);
 //endprototypes
 
 
@@ -32,9 +33,13 @@ int optimal_value(int weight[], int opt_vals[], int j, int n){
     //base case
     if(j == 0){
         opt_vals[j] = r*weight[j];
-        return 0;
+        return opt_vals[j];
     }
     if(j < 4){
+        if(j == 3){
+            opt_vals[j] = min((optimal_value(weight, opt_vals, j-1, n-1) + r*weight[j]), (4*c));
+            return opt_vals[j];
+        }
         opt_vals[j] = optimal_value(weight, opt_vals, j-1, n-1) + r * weight[j];
         return opt_vals[j];
     }
