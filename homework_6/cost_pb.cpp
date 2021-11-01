@@ -29,7 +29,7 @@ int main(){
 
 }
 
-//integer j refers to the index of recursion and integer n is the size of the array
+//integer j refers to the index of recursion
 int optimal_value(int weight[], int opt_vals[], int j){
     //base case
     if(j == 0){
